@@ -5,12 +5,12 @@ const app = express();
 // require('dotenv').config();
 
 
-//
-// app.use(express.json());
-// app.use(express.static('public'))
 
-// const goldController = require('./controllers/goldController.js');
-// app.use('/gold', goldController);
+app.use(express.json());
+app.use(express.static('public'))
+
+const goldController = require('./controllers/goldController.js');
+app.use('/gold', goldController);
 
 mongoose.connect('mongodb://localhost:27017/meancrud', {
  useNewUrlParser: true,
