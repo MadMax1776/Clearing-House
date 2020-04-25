@@ -10,5 +10,50 @@
 	<body ng-controller="MyController as ctrl">
     <h1>Buy and Sell your Gold!</h1>
     {{ 2+2 }}
+		<form ng-submit="ctrl.createGold()">
+       <!-- enables it to see what is inside the controller -->
+       <input type="text"
+       placeholder="Gold Type"
+       ng-model="ctrl.createForm.type"/>
+       <input type="submit" value="Create New Gold Item" />
+       <!-- ng model tells the form that everything that changes in js changes in form and vice versa; two way data binding -->
+     </form>
+     <!-- <table>
+       <tr ng-repeat="gold in ctrl.gold">
+         <td> {{ gold.type }} money</td>
+       </tr>
+    </table> -->
+
+		<div class="field-body">
+        <form class="log" ng-submit="ctrl.createGold()">
+          <div class="field">
+            Type: <input class="input" type="text" ng-model="ctrl.createForm.type" placeholder="Type"/><br/>
+            Description: <input class="description" type="text" ng-model="ctrl.createForm.description" placeholder="Description"/><br/>
+            Weight: <input class="input" type="text" ng-model="ctrl.createForm.weight" placeholder="Weight in Ounces"/><br/>
+            <div class="buttons has-addons is-centered">
+              <button type="submit" class="button is-light">Create Gold Entry</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+			<!-- <div id="goldDetails">
+      <strong>Type:</strong><br/>
+      {{ctrl.gold.type}}<br/>
+      <strong>Description:</strong><br/>
+      {{ctrl.gold.description}}<br/>
+      <strong>Weight:</strong><br/>
+      {{ctrl.gold.weight}}<br/>
+    </div> -->
+
+		<table>
+			<tr ng-repeat="gold in ctrl.gold">
+				<td> {{ gold.type }} </td>
+				<td> {{ gold.description }} </td>
+				<td> {{ gold.weight }} </td>
+			</tr>
+	 </table>
+
+		<button ng-click="ctrl.deleteGold(gold)">Delete This Item</button>
 	</body>
 </html>
