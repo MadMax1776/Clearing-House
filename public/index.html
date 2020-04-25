@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html ng-app="GoldApp">
+	<head>
+    <meta charset="utf-8">
+		<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js" defer></script> -->
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js" defer></script>
+		<script src="./js/app.js" charset="utf-8" defer></script>
+
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.4.3/dist/css/foundation.min.css"
+    integrity="sha256-GSio8qamaXapM8Fq9JYdGNTvk/dgs+cMLgPeevOYEx0= sha384-wAweiGTn38CY2DSwAaEffed6iMeflc0FMiuptanbN4J+ib+342gKGpvYRWubPd/+ sha512-QHEb6jOC8SaGTmYmGU19u2FhIfeG+t/hSacIWPpDzOp5yygnthL3JwnilM7LM1dOAbJv62R+/FICfsrKUqv4Gg=="
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2&family=Fjalla+One&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="/css/app.css">
+	</head>
+
+	<body ng-controller="MyController as ctrl">
+    <h1>Buy and Sell your precious metals!</h1>
+    {{ 2+2 }}
+
+
+		<div class="field-body">
+        <form class="log" ng-submit="ctrl.createGold()">
+          <div class="field">
+            Type: <input class="input" type="text" ng-model="ctrl.createForm.type" placeholder="Type"/><br/>
+            Description: <input class="description" type="text" ng-model="ctrl.createForm.description" placeholder="Description"/><br/>
+            Weight: <input class="input" type="text" ng-model="ctrl.createForm.weight" placeholder="Weight in Ounces"/><br/>
+            <div class="buttons has-addons is-centered">
+              <button type="submit" class="button is-light">Create Gold Entry</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+			<!-- <div id="goldDetails">
+      <strong>Type:</strong><br/>
+      {{ctrl.gold.type}}<br/>
+      <strong>Description:</strong><br/>
+      {{ctrl.gold.description}}<br/>
+      <strong>Weight:</strong><br/>
+      {{ctrl.gold.weight}}<br/>
+    </div> -->
+
+		<!-- <table>
+			<tr ng-repeat="gold in ctrl.gold">
+				<td> {{ gold.type }} </td>
+				<td> {{ gold.description }} </td>
+				<td> {{ gold.weight }} oz</td>
+				<td><button ng-click="ctrl.deleteGold(gold)">Delete This Item</button></td>
+				<td><button
+              ng-if="$index !== ctrl.indexOfEditFormToShow"
+              ng-click="ctrl.indexOfEditFormToShow = $index;"
+              href="#"
+              >
+              Edit This Wonder
+            </button></td>
+			</tr>
+	 </table> -->
+
+
+	 <h3 class="title is-3">List of Items</h3>
+      <div id="gold-list" class="is-size-3">
+        <ul>
+          <li ng-repeat="gold in ctrl.gold">
+						<td> {{ gold.type }} </td>
+						<td> {{ gold.description }} </td>
+						<td> {{ gold.weight }} oz</td>
+              <button ng-click="ctrl.deleteGold(gold)">Delete This Item</button> |
+              <button
+              ng-if="$index !== ctrl.indexOfEditFormToShow"
+              ng-click="ctrl.indexOfEditFormToShow = $index;"
+              href="#"
+              >
+              Edit This Item
+            </button>
+            <form id="edit-form"
+            ng-if="$index === ctrl.indexOfEditFormToShow"
+            ng-submit="ctrl.editGold(gold)">
+            Item Type:
+            <input type="text" ng-model="ctrl.updatedType" placeholder="Type"/>
+            Item Description:
+            <input type="text" ng-model="ctrl.updatedDescription" placeholder="Description"/>
+            Item Weight:
+            <input type="text" ng-model="ctrl.updatedWeight" placeholder="Weight"/>
+            <input type="submit" class="button is-light" placeholder="Submit Edits"/>
+            <button ng-click="ctrl.closeForm()" class="button is-light">Cancel Edit</button>
+          </form>
+        </li>
+      </ul>
+    </div>
+
+
+	</body>
+</html>
