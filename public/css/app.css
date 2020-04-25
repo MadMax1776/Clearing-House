@@ -1,0 +1,71 @@
+* {
+  text-align: center;
+}
+
+body {
+
+
+  background-position: center;
+  background-repeat: repeat;
+  background-size: cover;
+  filter: grayscale(50%);
+  font-family: 'Baloo 2', cursive;
+  color: white;
+}
+
+
+
+
+#gold-list > ul > li > button {
+  background-color: whitesmoke;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 33%;
+}
+
+#top {
+  position: fixed;
+  background-color: white;
+  padding: 0 20px 0 20px;
+}
+
+#edit-form {
+  width: 50%;
+  margin: 0 auto;
+}
+
+form{
+  width: 100%;
+  padding: 10px;
+  color: white;
+  background-color: gray;
+  text-align: center;
+}
+
+.box{
+  margin: auto;
+  width: 50%;
+  padding: 35px;
+}
+
+.input {
+  box-shadow: inset 0 0.0625em 0.125em ;
+  max-width: 100%;
+  width: 100%;
+}
+
+.title{
+  text-align: center;
+  color:white;
+  font-family: 'Fjalla One', sans-serif;
+}
+
+li{
+  cursor: pointer;
+   background-color: rgba(128,128,128,.5);
+   width: auto;
+}
+
+button {
+  margin: 10px;
+}

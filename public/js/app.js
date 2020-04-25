@@ -15,7 +15,7 @@ app.controller('MyController',['$http', function($http){
     $http({
               method:'POST',
               data: this.createForm,
-              url: '/gold'
+              url: '/gold/'
 
           }).then(response => {
               console.log(response.data)
@@ -44,21 +44,43 @@ app.controller('MyController',['$http', function($http){
         )
       };
 
-  this.deleteGold = function(gold) {
+      this.editGold = function(gold) {
       $http({
-        method:'DELETE',
-        url: '/gold/' + gold._id
+        method:'PUT',
+        url: '/gold/' + gold._id,
+        data: {
+          type: this.updatedType || gold.name,
+          description: this.updatedDescription || gold.description,
+          weight: this.updatedWeight || gold.weight
+        }
       }).then(
-        function(){
+        function(response){
+          controller.updatedType = null;
           controller.getGold();
         },
         function(error){
-
+          console.log(error);
         }
-      )
+      )};
+
+      this.closeForm = function() {
+    controller.indexOfEditFormToShow = null;
+  }
+
+  this.deleteGold = function(gold) {
+    $http({
+      method:'DELETE',
+      url: '/gold/' + gold._id
+    }).then(
+      function(){
+        controller.getGold();
+      },
+      function(error){
+      }
+    )
     }
 
-
+    document.querySelector('[ng-class]');
 
   this.getGold();
 }]);
