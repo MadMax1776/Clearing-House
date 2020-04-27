@@ -10,10 +10,14 @@ body {
   background-size: cover;
   filter: grayscale(50%);
   font-family: 'Baloo 2', cursive;
-  color: white;
+  color: black;
 }
 
+h1 {
+  font-size: 45px;
+  font-family: 'Baloo 2', cursive;\
 
+}
 
 
 #gold-list > ul > li > button {
@@ -25,7 +29,7 @@ body {
 
 #top {
   position: fixed;
-  background-color: white;
+  background-color: silver;
   padding: 0 20px 0 20px;
 }
 
