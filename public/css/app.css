@@ -3,28 +3,27 @@
 }
 
 body {
-
-  background-color: gold;
+  background-image: url("https://media.giphy.com/media/Xax49C2FrJMaI/giphy.gif");
   background-position: center;
   background-repeat: repeat;
   background-size: cover;
-  filter: grayscale(50%);
   font-family: 'Baloo 2', cursive;
   color: black;
 }
 
 h1 {
   font-size: 45px;
-  font-family: 'Baloo 2', cursive;\
-
+  font-family: 'Baloo 2', cursive;
+  color: black;
 }
 
 
 #gold-list > ul > li > button {
-  background-color: whitesmoke;
+  background-color: silver;
   padding: 5px;
   border-radius: 5px;
   font-size: 33%;
+  color: black;
 }
 
 #top {
@@ -41,8 +40,9 @@ h1 {
 form{
   width: 100%;
   padding: 10px;
-  color: white;
-  background-color: gray;
+  color: black;
+  background-color: #404040;
+  opacity: 0.95;
   text-align: center;
 }
 
@@ -58,16 +58,11 @@ form{
   width: 100%;
 }
 
-.title{
-  text-align: center;
-  color:white;
-  font-family: 'Fjalla One', sans-serif;
-}
-
-li{
+ li{
   cursor: pointer;
    background-color: rgba(128,128,128,.5);
    width: auto;
+   color: black;
 }
 
 button {
